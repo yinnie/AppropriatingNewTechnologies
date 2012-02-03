@@ -23,6 +23,8 @@ class testApp : public ofBaseApp{
 		//ofTexture	tex;
 		//ofPixels	pixels;
 		ofImage		image;
+	int offsetArea;
+	
 		ofxCvHaarFinder finder;	 // object used to detect haar features
 
 };
