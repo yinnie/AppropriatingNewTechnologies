@@ -6,21 +6,13 @@ extern "C" {
 
 //--------------------------------------------------------------
 void testApp::setup(){
-<<<<<<< HEAD
 	
-=======
-
-    
-    captureWidth = ofGetWidth();
-    captureHeight = ofGetHeight();
-    
->>>>>>> a270ca4ffd3de5fef35873715e540a1c8c6f4770
 	finder.setup("haarcascade_frontalface_default.xml");
 	//CGContextRef cgctx = NULL;
 	//ofSetVerticalSync(true);
-	//tex.allocate(captureWidth, captureHeight, GL_RGBA);
-	image.allocate(captureWidth, captureHeight, OF_IMAGE_COLOR);
-	//pixels.allocate(captureWidth, captureHeight, OF_IMAGE_COLOR);
+	//tex.allocate(300,300, GL_RGBA);
+	image.allocate(300, 300, OF_IMAGE_COLOR);
+	//pixels.allocate(300, 300, OF_IMAGE_COLOR);
 	
 	ofSetFrameRate(30);
 
@@ -29,17 +21,13 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
 	
-    captureWidth = ofGetWidth();
-    captureHeight = ofGetHeight();
-    
-	unsigned char * data = pixelsBelowWindow(ofGetWindowPositionX(), ofGetWindowPositionY(), captureWidth, captureHeight);
+	int w = 300;
+	int h = 300;
+	
+	unsigned char * data = pixelsBelowWindow(ofGetWindowPositionX(),ofGetWindowPositionY(),w,h);
 	
 	// now, let's get the R and B data swapped, so that it's all OK:
-<<<<<<< HEAD
 	for (int q = 0; q < w*h; q++){
-=======
-	for (int i = 0; i < captureWidth * captureHeight; i++){
->>>>>>> a270ca4ffd3de5fef35873715e540a1c8c6f4770
 		
 		unsigned char alpha = data[q*4]; // each index is in fact referring to only the r channel in a pixel  
 		
@@ -51,10 +39,10 @@ void testApp::update(){
 	
 	
 	if (data!= NULL) {
-		//tex.loadData(data, captureWidth, captureHeight, GL_RGBA);
+		//tex.loadData(data, 300, 300, GL_RGBA);
 		//tex.readToPixels(pixels);
 		//image = pixels;
-		image.setFromPixels(data, captureWidth, captureHeight, OF_IMAGE_COLOR_ALPHA, true);
+		image.setFromPixels(data, 300, 300, OF_IMAGE_COLOR_ALPHA, true);
 		image.setImageType(OF_IMAGE_COLOR);
 		image.update();
 		finder.findHaarObjects(image.getPixelsRef());
