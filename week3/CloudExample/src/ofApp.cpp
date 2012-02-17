@@ -3,12 +3,12 @@
 void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofImage img;
-	img.loadImage("linzer.png");
+	img.loadImage("out6.png");
 	mesh.setMode(OF_PRIMITIVE_POINTS);
 	for(int y = 0; y < img.getHeight(); y++) {
 		for(int x = 0; x < img.getWidth(); x++) {
 			ofColor cur = img.getColor(x, y);
-			if(cur.a > 0) {
+			if(cur.a > 180) {
 				// the alpha value encodes depth, let's remap it to a good depth range
 				float z = ofMap(cur.a, 0, 255, -480, 480);
 				cur.a = 255;

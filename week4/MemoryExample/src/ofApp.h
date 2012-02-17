@@ -7,9 +7,7 @@ public:
 	void setup();
 	void update();
 	void draw();
+	void dumpMemory();
 	
-	ofEasyCam cam;
-	ofMesh mesh;
-	
-	//ofVboMesh mesh;  //this is much faster becoz vbo mesh only gets drawn once
+	ofImage img, zoomed;
 };

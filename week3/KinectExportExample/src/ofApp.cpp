@@ -1,7 +1,9 @@
 #include "ofApp.h"
 
 void ofApp::setup() {
+	
 	kinect.init();
+	kinect.setDepthClipping(100, 400);
 	kinect.setRegistration(true);
 	kinect.open();
 }

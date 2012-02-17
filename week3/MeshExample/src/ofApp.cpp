@@ -57,4 +57,6 @@ void ofApp::draw() {
 	ofScale(1, -1, 1); // make y point down
 	mesh.drawWireframe();
 	cam.end();
+	
+	ofDrawBitmapString(ofToString(int(ofFrameRate())
 }
