@@ -17,7 +17,7 @@ void ofApp::setup() {
 	nPoints = 4096; // points to draw
 	complexity = 6; // wind complexity
 	maxMass = 0.8; // max pollen mass
-	timeSpeed = 0.2; // wind variation speed
+	timeSpeed = 0.02; // wind variation speed
 	phase = TWO_PI; // separate u-noise from v-noise
 	windSpeed = 40; // wind vector magnitude for debug
 	step = 10; // spatial sampling rate for debug

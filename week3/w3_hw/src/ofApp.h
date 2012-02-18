@@ -13,13 +13,15 @@ public:
 	//void keyPressed(int key);
 //	void mousePressed(int x, int y, int button);
 	
+	ofImage img;
+	
 	ofEasyCam cam;
 	vector<float> pollenMass;
 	vector<ofVec3f> points;
 	vector<ofIndexType> selectedIndices; //an array of the "randomly slected" indices 
 	float width, height;
 	ofMesh mesh;
-	ofMesh meshCopy;
+	ofMesh persistentMesh;
 	float t;
 	
 	int nPoints; // points to draw

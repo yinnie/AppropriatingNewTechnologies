@@ -9,9 +9,11 @@ ofVec3f ofApp::getField(ofVec3f position) {
 }
 
 ofVec3f getVertexfromImg(ofImage& img, int x, int y) {
+	x = ofClamp(x, 0, img.getWidth() - 1);
+	y = ofClamp(y, 0, img.getHeight() - 1);
 	ofColor color = img.getColor(x, y);
 	if(color.a > 0) {  // the alpha value encodes depth, let's remap it to a good depth range
-		float z = ofMap(color.a, 0, 255, -480, 480);
+		float z = ofMap(color.a, 0, 255, -600, 600);
 		return ofVec3f(x - img.getWidth() / 2, y - img.getHeight() / 2, z);
 	} else {
 		return ofVec3f(0, 0, 0);
@@ -23,33 +25,32 @@ ofVec3f getVertexfromImg(ofImage& img, int x, int y) {
 void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofEnableAlphaBlending();
-	ofImage img;
-	img.loadImage("out6.png");
-	ofSetFrameRate(20);
+	
+	img.loadImage("headHat.png");
+	//ofSetFrameRate(10);
 	
 	width = ofGetWidth();
 	height = ofGetHeight();
 	
-	complexity = 8; // wind complexity
+	complexity = 12; // wind complexity
 	maxMass = 0.8; // max pollen mass
-	timeSpeed = 0.02; // wind variation speed
+	timeSpeed = 0.005; // wind variation speed
 	phase = TWO_PI; // separate u-noise from v-noise
 	windSpeed = 40; // wind vector magnitude for debug
 	step = 10; // spatial sampling rate for debug
 	debugMode = false;
 	
-	
+	persistentMesh.setMode(OF_PRIMITIVE_POINTS);
 	mesh.setMode(OF_PRIMITIVE_POINTS);
 	for(int y = 0; y < img.getHeight(); y++) {
 		for(int x = 0; x < img.getWidth(); x++) {
 			ofColor cur = img.getColor(x, y);
 			if(cur.a > 180) {
 				// the alpha value encodes depth, let's remap it to a good depth range
-				float z = ofMap(cur.a, 0, 255, -480, 480);
+				float z = ofMap(cur.a, 0, 255, -600, 600);
 				cur.a = 255;
 				mesh.addColor(cur);
 				ofVec3f pos(x - img.getWidth()/2, y - img.getHeight()/2, z);
-				
 				mesh.addVertex(pos);
 			}
 		}
@@ -58,9 +59,8 @@ void ofApp::setup() {
 	glEnable(GL_DEPTH_TEST);
 	
 	// make the points bigger, otherwise it's hard to see them
-	glPointSize(1);
-	
-	meshCopy = mesh; 
+	glPointSize(1.5);
+	 
 	nPoints = mesh.getNumVertices(); // points to draw
 	
 	points.resize(nPoints);
@@ -104,13 +104,14 @@ void ofApp::draw() {
 	}
 	
 
-	for(int i = 0; i < nPoints; i++) {
+	for(int i = 0; i < nPoints; i+=50) {       //only moving vertices every 100 points
 		
 		float& x = points[i].x, y = points[i].y, z = points[i].z;
 		ofVec3f field = getField(points[i]);
 		float speed = (1 + ofNoise(t, field.x, field.y)) / pollenMass[i];
 		x += ofLerp(-speed, speed, field.x);
 		y += ofLerp(-speed, speed, field.y);
+		//z += ofLerp(-speed, speed, field.z);
 		
 		if(x < 0 || x > width || y < 0 || y > height) {
 			x = ofRandom(0, width);
@@ -120,9 +121,20 @@ void ofApp::draw() {
 		if(debugMode) {
 			ofCircle(x, y, 3);
 		} else {
+			/*
 			points[i].x = x;
 			points[i].y = y;
-		    mesh.setVertex(i, points[i] );
+			mesh.setVertex(i, points[i]);
+			 */
+			
+			ofVec3f cur = getVertexfromImg(img, x, y);
+		
+			if(cur.z > 150) {
+				persistentMesh.addColor(mesh.getColor(i));
+				cur.z+=ofRandom(-10,10);
+				persistentMesh.addVertex(cur);
+			}
+			
 
 		}			
 		
@@ -133,8 +145,8 @@ void ofApp::draw() {
 		ofBackground(0);
 		cam.begin();
 		ofScale(1, -1, 1); // make y point down
+		persistentMesh.draw();
 		mesh.draw();
-		//meshCopy.draw();
 		cam.end();
 	}	
 	
