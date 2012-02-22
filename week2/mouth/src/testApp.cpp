@@ -11,6 +11,8 @@ void testApp::setup() {
 	camTracker.setup();
 	
 	imageCounter =0;
+	posX=0;
+	posY=0;
 	
 	//face tracker on source
 	srcTracker.setup();
@@ -47,6 +49,17 @@ void testApp::draw() {
 	if(camTracker.getFound()) {
 		
 		ofMesh camMesh = camTracker.getImageMesh();
+				
+		ofMesh imageMesh = camTracker.getImageMesh();
+		
+		//move the mesh away
+		cam.getTextureReference().bind();
+		ofPushMatrix();
+		ofTranslate(100,100);
+		imageMesh.draw();
+		ofPopMatrix();
+		cam.getTextureReference().unbind();
+		
 		camMesh.clearTexCoords();
 		camMesh.addTexCoords(srcPoints);
 		
@@ -61,14 +74,7 @@ void testApp::draw() {
 		srcImg.getTextureReference().unbind();
 		
 		/*
-		ofMesh imageMesh = camTracker.getImageMesh(); 
-		//move the mesh away
-		int x = 100;
-		ofPushMatrix();
-		ofTranslate(x,0);
-		imageMesh.draw();
-		ofPopMatrix();
-		
+				
 		*/
 		
 	    mouth.setClosed(true);
@@ -84,7 +90,16 @@ void testApp::draw() {
 		mouth.draw();
 	}
 	
-		
+   
+	/*
+	if (posY < 200 ) {
+		posY ++;}
+	else {
+		posY = 300; 
+		posX = 50;	
+	}
+	
+	
 	/* distort the mouth 
 	ofSetLineWidth(1);
 	tracker.draw();
@@ -114,17 +129,20 @@ void testApp::draw() {
 void testApp::keyPressed(int key) {
 	if(key == 'r') {
 		camTracker.reset();
+		posX =0;
+		posY =0;
 	}
 	
 	if (key== ' ') {
 		srcImg.loadImage(ofToString(imageCounter-1) + ".png");
+		cout << imageCounter;
 		srcTracker.update(toCv(srcImg));
 	    srcPoints = srcTracker.getImagePoints();
 		
 	}
 	
 	if (key == 's') {
-		srcImg.grabScreen(110,0,ofGetWindowWidth(),ofGetWindowHeight());
+		srcImg.grabScreen(200,0,(ofGetWindowWidth()-200),ofGetWindowHeight());
 		srcImg.saveImage(ofToString(imageCounter) + ".png");
 		imageCounter ++;
 	}

@@ -23,6 +23,8 @@ public:
 	int imageCounter;
 	vector<ofVec2f> srcPoints;
 	
+	int posX, posY;
+	
 	
 	
 };
