@@ -25,6 +25,9 @@ public:
 	
 	int posX, posY;
 	
+	float scale;
+	ofVec3f orientation;
+	ofMatrix4x4 rotationMatrix;
 	
 	
 };

@@ -36,6 +36,9 @@ void testApp::update() {
 	cam.update();
 	if(cam.isFrameNew()) {
 		camTracker.update(toCv(cam));
+		scale = camTracker.getScale();
+		orientation = camTracker.getOrientation();
+		rotationMatrix = camTracker.getRotationMatrix();
 	}
 }
 
@@ -50,33 +53,35 @@ void testApp::draw() {
 		
 		ofMesh camMesh = camTracker.getImageMesh();
 				
-		ofMesh imageMesh = camTracker.getImageMesh();
+		ofMesh objectMesh = camTracker.getObjectMesh();
 		
 		//move the mesh away
 		cam.getTextureReference().bind();
 		ofPushMatrix();
-		ofTranslate(100,100);
-		imageMesh.draw();
+		ofSetupScreenOrtho(640, 480, OF_ORIENTATION_UNKNOWN, true, -1000, 1000);
+		ofTranslate(50,400);
+		applyMatrix(rotationMatrix);
+        ofScale(3.3,3.3,3.3);
+        ofDrawAxis(3.3);		
+		objectMesh.draw();
 		ofPopMatrix();
 		cam.getTextureReference().unbind();
 		
 		camMesh.clearTexCoords();
 		camMesh.addTexCoords(srcPoints);
 		
-		/*
-		ofMesh imageMesh = tracker.getImageMesh();
-		leftEye = tracker.getImageFeature(ofxFaceTracker::EYE_LEFT);
-		mouth = tracker.getImageFeature(ofxFaceTracker::OUTER_MOUTH);
-		 */
+		
 		
 		srcImg.getTextureReference().bind();
+		ofSetupScreenOrtho(640, 480, OF_ORIENTATION_UNKNOWN, true, -1000, 1000);
 		camMesh.draw();
 		srcImg.getTextureReference().unbind();
 		
 		/*
-				
-		*/
-		
+		 ofMesh imageMesh = tracker.getImageMesh();
+		 leftEye = tracker.getImageFeature(ofxFaceTracker::EYE_LEFT);
+		 mouth = tracker.getImageFeature(ofxFaceTracker::OUTER_MOUTH);
+		 */
 	    mouth.setClosed(true);
         ofPushStyle();
         ofFill();
