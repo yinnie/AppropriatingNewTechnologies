@@ -11,8 +11,8 @@ public:
 	void setup();
 	void update();
 	void draw();
-	//void dragEvent(ofDragInfo dragInfo);
-	//void loadFace(string face);
+	void dragEvent(ofDragInfo dragInfo);
+	void loadFace(string face);
 	
 	void keyPressed(int key);
 
@@ -27,8 +27,6 @@ public:
 	Clone clone;
 	ofFbo srcFbo, maskFbo;
 
-	//ofDirectory faces;
-	//int currentFace;
-	
-	int imageCounter;
+	ofDirectory faces;
+	int currentFace;
 };

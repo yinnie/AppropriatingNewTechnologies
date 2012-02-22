@@ -20,10 +20,7 @@ void testApp::setup() {
 	srcTracker.setup();
 	srcTracker.setIterations(25);
 	srcTracker.setAttempts(4);
-	
-	imageCounter =0;
-     
-	/*
+
 	faces.allowExt("jpg");
 	faces.allowExt("png");
 	faces.listDir("faces");
@@ -31,8 +28,6 @@ void testApp::setup() {
 	if(faces.size()!=0){
 		loadFace(faces.getPath(currentFace));
 	}
-	 
-	 */
 }
 
 void testApp::update() {
@@ -67,14 +62,11 @@ void testApp::update() {
 void testApp::draw() {
 	ofSetColor(255);
 	
-	/*
 	if(src.getWidth() > 0 && cloneReady) {
 		clone.draw(0, 0);
 	} else {
-		
-	*/	
 		cam.draw(0, 0);
-
+	}
 	
 	if(!camTracker.getFound()) {
 		drawHighlightString("camera face not found", 10, 10);
@@ -86,7 +78,6 @@ void testApp::draw() {
 	}
 }
 
-/*
 void testApp::loadFace(string face){
 	src.loadImage(face);
 	if(src.getWidth() > 0) {
@@ -98,7 +89,6 @@ void testApp::loadFace(string face){
 void testApp::dragEvent(ofDragInfo dragInfo) {
 	loadFace(dragInfo.files[0]);
 }
-
 
 void testApp::keyPressed(int key){
 	switch(key){
@@ -114,29 +104,3 @@ void testApp::keyPressed(int key){
 		loadFace(faces.getPath(currentFace));
 	}
 }
-*/
-
-void testApp::keyPressed(int key) {
-	/*
-	if(key == 'r') {
-		camTracker.reset();
-	}
-	*/
-	
-	if (key== ' ') {
-		src.loadImage(ofToString(imageCounter-1) + ".png");
-		srcTracker.update(toCv(src));
-	    srcPoints = srcTracker.getImagePoints();
-		
-	}
-	
-	if (key == 's') {
-		src.grabScreen(0,0,ofGetWindowWidth(),ofGetWindowHeight());
-		src.saveImage(ofToString(imageCounter) + ".png");
-		imageCounter ++;
-	}
-	
-	
-	
-}
-
