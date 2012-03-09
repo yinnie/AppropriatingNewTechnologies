@@ -42,6 +42,7 @@ void testApp::update() {
 	} else {
 		eyeSmoothed.x = mouseX;
 		eyeSmoothed.y = mouseY;
+		cout << eyeSmoothed.x << eyeSmoothed.y <<endl;
 	}
 	
 	if (mode == MODE_TEST){
@@ -90,6 +91,8 @@ void testApp::draw(){
 	ofBackground(200);	
 	//ofSetColor(255);
 	
+	//trackingManager.cam.draw(0,0,300,300);
+	
 	if (mode == MODE_TRACKING)	TM.draw();
 	if (mode == MODE_TEST)		BT.draw();
 	if (mode == MODE_DRAW )		eyeApp.draw();
@@ -108,8 +111,11 @@ void testApp::draw(){
 		}
 	}
 	
-	ofSetColor(0);
-	ofDrawBitmapString("FrameRate: " + ofToString((int) ofGetFrameRate()), 1, ofGetHeight() - 20);
+	ofSetColor(255,255,255);
+	ofDrawBitmapString("FrameRate: " + ofToString((int) ofGetFrameRate()), 1, ofGetHeight() - 50);
+	ofDrawBitmapString("eyeSmoothed.x: " + ofToString((int) eyeSmoothed.x), 1, ofGetHeight() - 35);
+	ofDrawBitmapString("eyeSmoothed.y: " + ofToString((int) eyeSmoothed.y), 1, ofGetHeight() - 15);
+
 		
 }
 

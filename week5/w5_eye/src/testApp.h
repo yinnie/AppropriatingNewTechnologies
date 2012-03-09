@@ -16,12 +16,13 @@
 static const int num_modes = 6;
 
 enum{
+	MODE_MOVIEPLAY,
 	MODE_TRACKING,
 	MODE_TEST,
 	MODE_DRAW,
 	MODE_TYPING,
 	MODE_PONG,
-	MODE_MOVIEPLAY,
+	
 };
 
 class testApp : public ofBaseApp{

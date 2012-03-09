@@ -1,18 +1,21 @@
-/*
- *  movie.cpp
- *  EyeOSC
- *
- *  Created by Yin Liu on 3/8/12.
- *  Copyright 2012 __MyCompanyName__. All rights reserved.
- *
- */
-
 #include "movieScene.h"
 
 void movieScene::setup(){
-	ofBackground(0);
-	movie1.loadMovie("test.mov");
-	movie2.loadMovie("test2.move");
+	ofBackground(255,255,255);
+	movie1.loadMovie("clip1.mov");
+    movie2.loadMovie("clip2.mov");
+    movie3.loadMovie("clip3.mov");
+    movie4.loadMovie("clip4.mov");
+   // movie5.loadMovie("clip5.mov");
+//    movie6.loadMovie("clip6.mov");
+//	 
+	movie1.play();
+	movie2.play();
+    movie3.play();
+    movie4.play();
+   // movie5.play();
+//    movie6.play();
+	
 	
 }
 
@@ -20,31 +23,72 @@ void movieScene::setup(){
 void movieScene::update(float mouseX, float mouseY) {
 	xPos = mouseX;
 	yPos = mouseY;
+	
 	movie1.idleMovie();
 	movie2.idleMovie();
+    //movie3.idleMovie();
+    movie4.idleMovie();
+    //movie5.idleMovie();
+//    movie6.idleMovie();
+//	 
 	
+	
+	if(xPos>0 && xPos< 400 && yPos> ofGetWindowHeight()/2 && yPos < ofGetWindowHeight()) {
+		state=1;  //Gabby
+	}
+	/*
+	if (xPos>600 && xPos< 600 && yPos>300 && yPos < 500) {
+		state =2;  //Peter
+	}
+	*/
+	if (xPos>760 && xPos< 820 && yPos>300 && yPos < 600) {
+		state =3;  //mehan
+	}
+	/*
+	else if (xPos>870 && xPos< 1090 && yPos>300 && yPos < 500) {
+		state =4;  //Mick
+	}
+	else if (xPos>1090 && xPos< 1280 && yPos>300 && yPos < 500) {
+		state =5;  //kaitlin
+	}
+	 
+	else {
+		state =4;
+	}
+	 */
+		
 }
 
 
 void movieScene::draw() {
+	ofSetHexColor(0xFFFFFF);  //this line is important!! otherwise movies dont draw properly
 	
 	
-	int top= ofGetWindowHeight()/4;
-	int bottom = ofGetWindowHeight()/2;
-	int left = ofGetWindowWidth()/4;
-	int right = ofGetWindowWidth()/2;
 	
-	//if(xPos < right && xPos> left && yPos> top && yPos <bottom) {
-	if(xPos < right) {
-
-		movie2.play();
-		movie2.draw(0,0, 320,240);
+	switch (state) {
+		case 1:
+			movie2.draw(0,0,1280,800);
+			break;
+			/*
+		case 2:
+			movie3.draw(0,0,1280,800);
+			break;
+			 */
+		case 3:
+			movie4.draw(0,0,1280,800);
+			break;
+			/*
+		case 4:
+			movie5.draw(0,0,1280,800);
+			break;
+		case 5:
+			movie6.draw(0,0,1280,800);
+			break;
+			 */
+		default:
+			movie1.draw(0,0,1280,800);
+			break;
 	}
-	else if (xPos > right) {
-		movie1.play();
-		movie1.draw(320,0, 320, 240);
-	}
-
 	
 }
 

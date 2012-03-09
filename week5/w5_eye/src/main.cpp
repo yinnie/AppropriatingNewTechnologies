@@ -6,7 +6,7 @@
 int main( ){
 
     ofAppGlutWindow window;
-	ofSetupOpenGL(&window, 1380, 860, OF_WINDOW);
+	ofSetupOpenGL(&window, 1280, 800, OF_WINDOW);
 	//ofSetupOpenGL(&window, 640, 480, OF_WINDOW);
 
 	// this kicks off the running of my app

@@ -22,11 +22,10 @@ public:
 	void draw();
 	
    
-    ofVideoPlayer movie1;
-	ofVideoPlayer movie2;
+    ofVideoPlayer movie1, movie2,movie3,movie4,movie5,movie6;
 	float xPos;
 	float yPos;
-	
+	int state;
 	
 };
 

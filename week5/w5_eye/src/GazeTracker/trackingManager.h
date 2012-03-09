@@ -35,7 +35,7 @@ public:
 	
 	void keyPressed(int key);
 	
-private:
+
 	cv::Mat grayImage, colorImage;
 	ofxCvColorImage dispImage;
 	void updateDispImage();
