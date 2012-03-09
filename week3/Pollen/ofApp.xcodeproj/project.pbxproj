@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D3AB5D150281B000F3E678 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00D3AB45150281B000F3E678 /* main.cpp */; };
+		00D3AB5E150281B000F3E678 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 00D3AB46150281B000F3E678 /* testApp.cpp */; };
+		00D3AB5F150281B000F3E678 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D3AB4F150281B000F3E678 /* Syphon.framework */; };
+		00D3AB60150281B000F3E678 /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D3AB52150281B000F3E678 /* SyphonNameboundClient.m */; };
+		00D3AB61150281B000F3E678 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00D3AB57150281B000F3E678 /* ofxSyphonClient.mm */; };
+		00D3AB62150281B000F3E678 /* ofxSyphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 00D3AB59150281B000F3E678 /* ofxSyphonServer.mm */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -27,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		00D3AB69150281B000F3E678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00D3AB48150281B000F3E678 /* SyphonExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4B69B5B0A3A1756003C02F2;
+			remoteInfo = SyphonExample;
+		};
 		E4328147138ABC890047C5CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
@@ -57,6 +70,47 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00D3AB1A150281B000F3E678 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
+		00D3AB1B150281B000F3E678 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
+		00D3AB1C150281B000F3E678 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		00D3AB1E150281B000F3E678 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
+		00D3AB1F150281B000F3E678 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
+		00D3AB20150281B000F3E678 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
+		00D3AB21150281B000F3E678 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
+		00D3AB22150281B000F3E678 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
+		00D3AB23150281B000F3E678 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
+		00D3AB24150281B000F3E678 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
+		00D3AB25150281B000F3E678 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
+		00D3AB26150281B000F3E678 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
+		00D3AB28150281B000F3E678 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
+		00D3AB2A150281B000F3E678 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		00D3AB2D150281B000F3E678 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		00D3AB31150281B000F3E678 /* pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.idx"; sourceTree = "<group>"; };
+		00D3AB32150281B000F3E678 /* pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.pack"; sourceTree = "<group>"; };
+		00D3AB33150281B000F3E678 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
+		00D3AB36150281B000F3E678 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		00D3AB39150281B000F3E678 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		00D3AB3C150281B000F3E678 /* .sln */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .sln; sourceTree = "<group>"; };
+		00D3AB3D150281B000F3E678 /* .vcproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = .vcproj; sourceTree = "<group>"; };
+		00D3AB3E150281B000F3E678 /* .vcproj.user */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = .vcproj.user; sourceTree = "<group>"; };
+		00D3AB41150281B000F3E678 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		00D3AB42150281B000F3E678 /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
+		00D3AB43150281B000F3E678 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		00D3AB45150281B000F3E678 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		00D3AB46150281B000F3E678 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
+		00D3AB47150281B000F3E678 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		00D3AB48150281B000F3E678 /* SyphonExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SyphonExample.xcodeproj; sourceTree = "<group>"; };
+		00D3AB4F150281B000F3E678 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = "<group>"; };
+		00D3AB51150281B000F3E678 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyphonNameboundClient.h; sourceTree = "<group>"; };
+		00D3AB52150281B000F3E678 /* SyphonNameboundClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyphonNameboundClient.m; sourceTree = "<group>"; };
+		00D3AB53150281B000F3E678 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		00D3AB55150281B000F3E678 /* ofxSyphon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSyphon.h; sourceTree = "<group>"; };
+		00D3AB56150281B000F3E678 /* ofxSyphonClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSyphonClient.h; sourceTree = "<group>"; };
+		00D3AB57150281B000F3E678 /* ofxSyphonClient.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSyphonClient.mm; sourceTree = "<group>"; };
+		00D3AB58150281B000F3E678 /* ofxSyphonServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSyphonServer.h; sourceTree = "<group>"; };
+		00D3AB59150281B000F3E678 /* ofxSyphonServer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxSyphonServer.mm; sourceTree = "<group>"; };
+		00D3AB5B150281B000F3E678 /* Simple Client.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Simple Client.app"; sourceTree = "<group>"; };
+		00D3AB5C150281B000F3E678 /* Simple Server.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "Simple Server.app"; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -99,15 +153,274 @@
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
+				00D3AB5F150281B000F3E678 /* Syphon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00D3AB18150281B000F3E678 /* ofxSyphon */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB19150281B000F3E678 /* .git */,
+				00D3AB3B150281B000F3E678 /* example */,
+				00D3AB4B150281B000F3E678 /* libs */,
+				00D3AB53150281B000F3E678 /* README */,
+				00D3AB54150281B000F3E678 /* src */,
+				00D3AB5A150281B000F3E678 /* testapps */,
+			);
+			name = ofxSyphon;
+			path = ../../../addons/ofxSyphon;
+			sourceTree = SOURCE_ROOT;
+		};
+		00D3AB19150281B000F3E678 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB1A150281B000F3E678 /* config */,
+				00D3AB1B150281B000F3E678 /* description */,
+				00D3AB1C150281B000F3E678 /* HEAD */,
+				00D3AB1D150281B000F3E678 /* hooks */,
+				00D3AB26150281B000F3E678 /* index */,
+				00D3AB27150281B000F3E678 /* info */,
+				00D3AB29150281B000F3E678 /* logs */,
+				00D3AB2E150281B000F3E678 /* objects */,
+				00D3AB33150281B000F3E678 /* packed-refs */,
+				00D3AB34150281B000F3E678 /* refs */,
+			);
+			path = .git;
+			sourceTree = "<group>";
+		};
+		00D3AB1D150281B000F3E678 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB1E150281B000F3E678 /* applypatch-msg.sample */,
+				00D3AB1F150281B000F3E678 /* commit-msg.sample */,
+				00D3AB20150281B000F3E678 /* post-update.sample */,
+				00D3AB21150281B000F3E678 /* pre-applypatch.sample */,
+				00D3AB22150281B000F3E678 /* pre-commit.sample */,
+				00D3AB23150281B000F3E678 /* pre-rebase.sample */,
+				00D3AB24150281B000F3E678 /* prepare-commit-msg.sample */,
+				00D3AB25150281B000F3E678 /* update.sample */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		00D3AB27150281B000F3E678 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB28150281B000F3E678 /* exclude */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		00D3AB29150281B000F3E678 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB2A150281B000F3E678 /* HEAD */,
+				00D3AB2B150281B000F3E678 /* refs */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		00D3AB2B150281B000F3E678 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB2C150281B000F3E678 /* heads */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		00D3AB2C150281B000F3E678 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB2D150281B000F3E678 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		00D3AB2E150281B000F3E678 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB2F150281B000F3E678 /* info */,
+				00D3AB30150281B000F3E678 /* pack */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		00D3AB2F150281B000F3E678 /* info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		00D3AB30150281B000F3E678 /* pack */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB31150281B000F3E678 /* pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.idx */,
+				00D3AB32150281B000F3E678 /* pack-1905d4b02409a7ce70b58b8ad4006ed8dbc5300b.pack */,
+			);
+			path = pack;
+			sourceTree = "<group>";
+		};
+		00D3AB34150281B000F3E678 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB35150281B000F3E678 /* heads */,
+				00D3AB37150281B000F3E678 /* remotes */,
+				00D3AB3A150281B000F3E678 /* tags */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		00D3AB35150281B000F3E678 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB36150281B000F3E678 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		00D3AB37150281B000F3E678 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB38150281B000F3E678 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		00D3AB38150281B000F3E678 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB39150281B000F3E678 /* HEAD */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		00D3AB3A150281B000F3E678 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tags;
+			sourceTree = "<group>";
+		};
+		00D3AB3B150281B000F3E678 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB3C150281B000F3E678 /* .sln */,
+				00D3AB3D150281B000F3E678 /* .vcproj */,
+				00D3AB3E150281B000F3E678 /* .vcproj.user */,
+				00D3AB3F150281B000F3E678 /* bin */,
+				00D3AB42150281B000F3E678 /* openFrameworks-Info.plist */,
+				00D3AB43150281B000F3E678 /* Project.xcconfig */,
+				00D3AB44150281B000F3E678 /* src */,
+				00D3AB48150281B000F3E678 /* SyphonExample.xcodeproj */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		00D3AB3F150281B000F3E678 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB40150281B000F3E678 /* data */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		00D3AB40150281B000F3E678 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB41150281B000F3E678 /* .gitignore */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		00D3AB44150281B000F3E678 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB45150281B000F3E678 /* main.cpp */,
+				00D3AB46150281B000F3E678 /* testApp.cpp */,
+				00D3AB47150281B000F3E678 /* testApp.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		00D3AB49150281B000F3E678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB6A150281B000F3E678 /* SyphonExampleDebug.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00D3AB4B150281B000F3E678 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB4C150281B000F3E678 /* Syphon */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		00D3AB4C150281B000F3E678 /* Syphon */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB4D150281B000F3E678 /* lib */,
+				00D3AB50150281B000F3E678 /* src */,
+			);
+			path = Syphon;
+			sourceTree = "<group>";
+		};
+		00D3AB4D150281B000F3E678 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB4E150281B000F3E678 /* osx */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		00D3AB4E150281B000F3E678 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB4F150281B000F3E678 /* Syphon.framework */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		00D3AB50150281B000F3E678 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB51150281B000F3E678 /* SyphonNameboundClient.h */,
+				00D3AB52150281B000F3E678 /* SyphonNameboundClient.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		00D3AB54150281B000F3E678 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB55150281B000F3E678 /* ofxSyphon.h */,
+				00D3AB56150281B000F3E678 /* ofxSyphonClient.h */,
+				00D3AB57150281B000F3E678 /* ofxSyphonClient.mm */,
+				00D3AB58150281B000F3E678 /* ofxSyphonServer.h */,
+				00D3AB59150281B000F3E678 /* ofxSyphonServer.mm */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		00D3AB5A150281B000F3E678 /* testapps */ = {
+			isa = PBXGroup;
+			children = (
+				00D3AB5B150281B000F3E678 /* Simple Client.app */,
+				00D3AB5C150281B000F3E678 /* Simple Server.app */,
+			);
+			path = testapps;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				00D3AB18150281B000F3E678 /* ofxSyphon */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -233,6 +546,10 @@
 					ProductGroup = E4328144138ABC890047C5CB /* Products */;
 					ProjectRef = E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */;
 				},
+				{
+					ProductGroup = 00D3AB49150281B000F3E678 /* Products */;
+					ProjectRef = 00D3AB48150281B000F3E678 /* SyphonExample.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -242,6 +559,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		00D3AB6A150281B000F3E678 /* SyphonExampleDebug.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SyphonExampleDebug.app;
+			remoteRef = 00D3AB69150281B000F3E678 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E4328148138ABC890047C5CB /* openFrameworksDebug.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -274,6 +598,11 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				00D3AB5D150281B000F3E678 /* main.cpp in Sources */,
+				00D3AB5E150281B000F3E678 /* testApp.cpp in Sources */,
+				00D3AB60150281B000F3E678 /* SyphonNameboundClient.m in Sources */,
+				00D3AB61150281B000F3E678 /* ofxSyphonClient.mm in Sources */,
+				00D3AB62150281B000F3E678 /* ofxSyphonServer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,8 +680,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../addons/ofxSyphon/libs/Syphon/lib/osx\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -438,7 +769,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../../addons/ofxSyphon/libs/Syphon/lib/osx\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../libs/glut/lib/osx\"";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

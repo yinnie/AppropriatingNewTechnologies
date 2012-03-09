@@ -23,7 +23,7 @@ void testApp::setup() {
 	
 	imageCounter =0;
      
-	/*
+	
 	faces.allowExt("jpg");
 	faces.allowExt("png");
 	faces.listDir("faces");
@@ -32,7 +32,7 @@ void testApp::setup() {
 		loadFace(faces.getPath(currentFace));
 	}
 	 
-	 */
+	 
 }
 
 void testApp::update() {
@@ -86,7 +86,7 @@ void testApp::draw() {
 	}
 }
 
-/*
+
 void testApp::loadFace(string face){
 	src.loadImage(face);
 	if(src.getWidth() > 0) {
@@ -114,7 +114,7 @@ void testApp::keyPressed(int key){
 		loadFace(faces.getPath(currentFace));
 	}
 }
-*/
+
 
 void testApp::keyPressed(int key) {
 	/*

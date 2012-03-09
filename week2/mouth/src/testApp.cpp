@@ -9,10 +9,12 @@ void testApp::setup() {
 	ofEnableAlphaBlending();
 	
 	camTracker.setup();
+
+	posX=ofGetWindowWidth()/2;
+	posY=ofGetWindowHeight()/2;
 	
 	imageCounter =0;
-	posX=0;
-	posY=0;
+	
 	
 	//face tracker on source
 	srcTracker.setup();
@@ -27,7 +29,6 @@ void testApp::setup() {
 	srcImg.loadImage("face.jpeg");
     srcTracker.update(toCv(srcImg));
     srcPoints = srcTracker.getImagePoints();
-
     	
 	
 }
@@ -36,6 +37,7 @@ void testApp::update() {
 	cam.update();
 	if(cam.isFrameNew()) {
 		camTracker.update(toCv(cam));
+		
 		scale = camTracker.getScale();
 		orientation = camTracker.getOrientation();
 		rotationMatrix = camTracker.getRotationMatrix();
@@ -55,11 +57,11 @@ void testApp::draw() {
 				
 		ofMesh objectMesh = camTracker.getObjectMesh();
 		
-		//move the mesh away
+		//move the object mesh to the corner of the screen
 		cam.getTextureReference().bind();
 		ofPushMatrix();
 		ofSetupScreenOrtho(640, 480, OF_ORIENTATION_UNKNOWN, true, -1000, 1000);
-		ofTranslate(50,400);
+		ofTranslate(posX,posY);
 		applyMatrix(rotationMatrix);
         ofScale(3.3,3.3,3.3);
         ofDrawAxis(3.3);		
@@ -67,18 +69,16 @@ void testApp::draw() {
 		ofPopMatrix();
 		cam.getTextureReference().unbind();
 		
+		//substitute the imageMesh with srcImg
 		camMesh.clearTexCoords();
 		camMesh.addTexCoords(srcPoints);
-		
-		
-		
 		srcImg.getTextureReference().bind();
 		ofSetupScreenOrtho(640, 480, OF_ORIENTATION_UNKNOWN, true, -1000, 1000);
 		camMesh.draw();
 		srcImg.getTextureReference().unbind();
 		
+		
 		/*
-		 ofMesh imageMesh = tracker.getImageMesh();
 		 leftEye = tracker.getImageFeature(ofxFaceTracker::EYE_LEFT);
 		 mouth = tracker.getImageFeature(ofxFaceTracker::OUTER_MOUTH);
 		 */
@@ -96,15 +96,14 @@ void testApp::draw() {
 	}
 	
    
-	/*
-	if (posY < 200 ) {
-		posY ++;}
+	if (posY < 400 && posX >0 ) {
+		posY ++;
+		posX --;}
 	else {
-		posY = 300; 
+		posY = 400; 
 		posX = 50;	
 	}
-	
-	
+		
 	/* distort the mouth 
 	ofSetLineWidth(1);
 	tracker.draw();
@@ -126,7 +125,6 @@ void testApp::draw() {
 	 bool inside = faceOutline.inside(mouseX, mouseY);
 	 ofDrawBitmapString(inside ? "inside" : "outside", 10, 40);
 	 }
-
 	*/
 
 }
@@ -151,8 +149,6 @@ void testApp::keyPressed(int key) {
 		srcImg.saveImage(ofToString(imageCounter) + ".png");
 		imageCounter ++;
 	}
-	
-	
 	
 }
 

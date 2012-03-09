@@ -22,6 +22,8 @@ public:
 	ofImage srcImg;
 	int imageCounter;
 	vector<ofVec2f> srcPoints;
+	vector<ofVec2f> camPoints;
+	ofVec2f camPosition;
 	
 	int posX, posY;
 	

@@ -27,8 +27,8 @@ public:
 	Clone clone;
 	ofFbo srcFbo, maskFbo;
 
-	//ofDirectory faces;
-	//int currentFace;
+	ofDirectory faces;
+	int currentFace;
 	
 	int imageCounter;
 };

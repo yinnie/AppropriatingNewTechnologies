@@ -26,7 +26,7 @@ void ofApp::setup() {
 	ofSetVerticalSync(true);
 	ofEnableAlphaBlending();
 	
-	img.loadImage("headHat.png");
+	img.loadImage("Original123catch.obj");
 	//ofSetFrameRate(10);
 	
 	width = ofGetWidth();

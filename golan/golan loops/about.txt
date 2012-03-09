@@ -1,0 +1,27 @@
+
+----------------------
+Title:
+Merce's Isosurface
+
+Credits
+Software: Golan Levin, April 2009
+Motion Capture Data: Cunningham Foundation and OpenEnded Group
+Mocap parsing code: Lucas Walter, Bioviewer
+Metaball code: Andreas Jönsson, Angelcode
+Mocap file conversion: Moshe Mahler, CMU
+Developed in openFrameworks.
+
+
+
+----------------------
+Statement
+"Merce's Isosurface" returns a mortal coil to the disembodied datapoints of Merce Cunningham's 2008 "Loops" performance. Here, the digitally captured coordinates of Cunningham's fingers and knuckle joints are used to structure a smooth field of simulated energy. The result is a twitchy, fleshy blob, animated by Cunningham's own movements, which dances in the liminal territory between pure abstract form and medical information visualization.
+
+----------------------
+Here is a revised version of my bio - the one you selected was a little out-of-date:
+
+Biography
+
+Golan Levin's work combines equal measures of the whimsical, the provocative, and the sublime in a wide variety of online, installation and performance media. His projects include Dialtones [2001], a concert whose sounds are wholly performed through the carefully choreographed dialing and ringing of the audience's own mobile phones, and The Secret Lives of Numbers [2002], an interactive information visualization of global numeracy. Previously, Levin received awards in the Prix Ars Electronica and elsewhere for his Audiovisual Environment Suite [1999] software and its accompanying audiovisual performance, Scribble [2000]. Other projects from recent years include Re:MARK [2002], Messa di Voce [2003], and The Manual Input Sessions [2004], developed in collaboration with Zachary Lieberman, and Scrapple [2005] and Ursonography [2005]; these performance and installation works use augmented-reality technologies to create multi-person, real-time visualizations of their participants’ speech and gestures. Levin's current projects, such as Opto-Isolator [2007] and Double-Taker (Snout) [2008], employ interactive robotics and machine vision to explore the theme of eye contact as a primary new mode for human-machine communication. Levin is Associate Professor of Electronic Time-Based Art and Director of the STUDIO for Creative Inquiry at Carnegie Mellon University, Pittsburgh.
+
+

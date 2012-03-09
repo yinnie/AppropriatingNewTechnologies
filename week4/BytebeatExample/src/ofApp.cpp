@@ -16,6 +16,7 @@ void ofApp::update() {
 
 void ofApp::draw() {
 	ofSetColor(255);
+	ofBackground(0);
 	
 	fbo.begin();
 	shader.begin();
@@ -24,13 +25,13 @@ void ofApp::draw() {
 	shader.end();
 	fbo.end();
 	
-	fbo.draw(0, 0);
+	fbo.draw(200, 100);
 	
 	fbo.readToPixels(audioPixels);
 	
 	ofSetColor(255, 0, 0);
 	int y = time / (rateDivider * ofGetWidth());
-	ofLine(0, y, ofGetWidth(), y);
+	//ofLine(0, y, ofGetWidth(), y);
 }
 
 
