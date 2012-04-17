@@ -38,7 +38,8 @@ void ofApp::setup() {
 			ofVec3f sw = getVertexFromImg(img, x, y + skip);
 			ofVec3f se = getVertexFromImg(img, x + skip, y + skip);
 			if(nw != zero && ne != zero && sw != zero && se != zero) {
-				addFace(mesh, nw, ne, se, sw);
+				//addFace(mesh, nw, ne, se, sw);
+				addFace(mesh, se,ne,sw);
 			}
 		}
 	}
@@ -58,5 +59,5 @@ void ofApp::draw() {
 	mesh.drawWireframe();
 	cam.end();
 	
-	ofDrawBitmapString(ofToString(int(ofFrameRate())
+	//ofDrawBitmapString(ofToString(int(ofFrameRate());
 }

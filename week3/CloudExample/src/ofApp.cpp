@@ -2,13 +2,22 @@
 
 void ofApp::setup() {
 	ofSetVerticalSync(true);
-	ofImage img;
-	img.loadImage("out6.png");
+    
+	img1.loadImage("linzer.png");
+	img2.loadImage("out6.png");
+	getMeshfromImage(img1);
+	getMeshfromImage(img2);
+	
+}
+
+void ofApp ::getMeshfromImage (ofImage img) 
+{
 	mesh.setMode(OF_PRIMITIVE_POINTS);
-	for(int y = 0; y < img.getHeight(); y++) {
-		for(int x = 0; x < img.getWidth(); x++) {
+	int skip=5;
+	for(int y = 0; y < img.getHeight(); y+=skip) {
+		for(int x = 0; x < img.getWidth(); x+=skip) {
 			ofColor cur = img.getColor(x, y);
-			if(cur.a > 180) {
+			if(cur.a > 0) {
 				// the alpha value encodes depth, let's remap it to a good depth range
 				float z = ofMap(cur.a, 0, 255, -480, 480);
 				cur.a = 255;
@@ -21,10 +30,10 @@ void ofApp::setup() {
 	}
 	
 	// even points can overlap with each other, let's avoid that
-	glEnable(GL_DEPTH_TEST);
+	//glEnable(GL_DEPTH_TEST);
 	
 	// make the points bigger, otherwise it's hard to see them
-	glPointSize(4);
+	glPointSize(2);
 }
 
 void ofApp::update() {

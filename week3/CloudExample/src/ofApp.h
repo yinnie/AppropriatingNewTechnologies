@@ -10,4 +10,9 @@ public:
 	
 	ofEasyCam cam;
 	ofMesh mesh;
+	ofImage img1;
+	ofImage img2;
+	
+	void getMeshfromImage(ofImage img);
+	
 };
